@@ -1,0 +1,21 @@
+#get the necessary cargo stuff
+for fredora: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+for ubuntu: cargo install wasm-pack
+
+#make a new rust project and do your code
+cargo init --lib
+
+#make the package
+wasm-pack build
+
+#get the necessary npm stuff
+create package.json in root
+npm install
+
+#bundle everything
+node_modules/.bin/webpack
+
+# start the server
+cd dist; cd ../node_modules/.bin/wasm-server
+
+# go to http://127.0.0.1:3000
